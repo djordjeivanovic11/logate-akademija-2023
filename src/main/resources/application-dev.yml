@@ -11,3 +11,6 @@ spring:
 
 external-post-api:
   url: "https://jsonplaceholder.typicode.com/posts"
+
+external-fake-store-api:
+  url: "https://fakestoreapi.com/products"

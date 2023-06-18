@@ -75,8 +75,6 @@ public class UserController {
         LOGGER.info("User kojeg smo napravili je {}", userCreateDTO);
         UserDTO user = userService.createUser(userCreateDTO);
         return new ResponseEntity<>(user, HttpStatus.OK);
-
-
     }
 
     /*@PutMapping(value="{id}")
