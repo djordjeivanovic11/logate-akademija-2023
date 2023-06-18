@@ -1,0 +1,6 @@
+
+twitter-api:
+  url: 192.168.42.45/api/twitter
+  user-name: userProd
+  port: 889
+  token: password111

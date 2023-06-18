@@ -1,0 +1,13 @@
+
+twitter-api:
+  url: 192.168.42.45/api/twitter
+  user-name: userDev
+  port: 889
+  token: password222
+
+spring:
+  jpa:
+    6
+
+external-post-api:
+  url: "https://jsonplaceholder.typicode.com/posts"
