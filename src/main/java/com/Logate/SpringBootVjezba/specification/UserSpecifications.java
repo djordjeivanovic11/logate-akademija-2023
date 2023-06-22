@@ -26,6 +26,7 @@ public class UserSpecifications implements Specification<User> {
         filterByAge(root, criteriaBuilder, predicates);
 
         criteriaBuilder.and(predicates.toArray(new Predicate [predicates.size()] ));
+        return null;
     }
 
 

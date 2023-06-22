@@ -21,6 +21,7 @@ import java.util.Map;
 public class UserService {
 
 
+
     /*DependencyIncjection na nivou konstruktora
         public UserService(ProductService productService) {
             this.productService = productService;
@@ -44,8 +45,7 @@ public class UserService {
         user.toString();
     }
 
-    @Autowired
-    IUserInterface iUserRepository;
+
 
     @Autowired
     UserRepository userRepository;
@@ -98,23 +98,23 @@ public class UserService {
         return user;
     }
 
-    public void getAllUserPage(Pageable pageable) {
+    /*public void getAllUserPage(Pageable pageable) {
         IUserInterface.getAllUserPage(pageable);
-    }
+    }*/
 
    /* public UserDTO updateUser(UserCreateDTO userCreateDTO, Integer id) {
     */
 
-    public void search(UserSearchFilter userSearchFilter){
+    //*public void search(UserSearchFilter userSearchFilter){
        /* if(userSearchFilter.getfirstName != null){
             ///poziv ka repository
         }
         if(userSearchFilter.getfirstName != null && userSearchFilter.getDescription()!=null){
             //poziv ka drugoj reposiotry methodi
-        }*/
+        }
         UserSpecifications userSpecification = new UserSpecifications(userSearchFilter);
         iUserRepository.findAll(userSpecification);
-    }
+    }*/
 
 
 

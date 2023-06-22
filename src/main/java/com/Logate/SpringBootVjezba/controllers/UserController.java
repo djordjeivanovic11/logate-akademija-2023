@@ -102,13 +102,14 @@ public class UserController {
         return new ResponseEntity<>(httpHeader, HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping(value="paging")
+   /* @GetMapping(value="paging")
     public ResponseEntity<Void> requestWithPaging(Pageable pageable){
         userService.getAllUserPage(pageable);
+        return ResponseEntity(HttpStatus.OK);
     }
     @GetMapping(value="search-filter")
     public ResponseEntity<Void> search(UserSearchFilter userSearchFilter) {
-        /*userService,search(userSearchFilter);*/
-    }
+        userService,search(userSearchFilter);
+    }*/
 
 }

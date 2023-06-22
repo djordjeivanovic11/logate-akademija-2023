@@ -3,6 +3,7 @@ package com.Logate.SpringBootVjezba.repositories;
 import com.Logate.SpringBootVjezba.DTO.DepartmentDTO;
 import com.Logate.SpringBootVjezba.entities.User;
 import com.Logate.SpringBootVjezba.projection.UserProjection;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -100,9 +101,5 @@ List<User> getByDepartmentDescriptionAndName(@Param("description") String descri
     @Query(value="select first_name firstName, last_name lastName, age " +
             "from User user where user.name = :userName", nativeQuery = true)
     List<UserProjection> getUserByNameNative(@Param("name") String name);
-
-
-
-
 
 }
