@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @Table(name="users")
 public class User {
@@ -26,12 +28,13 @@ public class User {
     @Column
     private String address;
 
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.EAGER)
     @JsonIgnore
-    @JoinColumn(name="department_name")
-    private Integer departmentId;
+    @JoinColumn(name="department_id")
+    private Department department;
 
     @ManyToOne
+
     @JoinTable(
             name="user_roles",
             joinColumns = @JoinColumn(name="user_id", referencedColumnName = "id"),

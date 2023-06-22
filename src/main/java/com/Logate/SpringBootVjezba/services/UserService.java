@@ -3,12 +3,16 @@ package com.Logate.SpringBootVjezba.services;
 import com.Logate.SpringBootVjezba.DTO.UserCreateDTO;
 import com.Logate.SpringBootVjezba.DTO.UserDTO;
 import com.Logate.SpringBootVjezba.Filters.UserFilter;
+import com.Logate.SpringBootVjezba.Filters.UserSearchFilter;
 import com.Logate.SpringBootVjezba.User;
+import com.Logate.SpringBootVjezba.repositories.IUserInterface;
 import com.Logate.SpringBootVjezba.repositories.UserRepository;
+import com.Logate.SpringBootVjezba.specification.UserSpecifications;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.awt.print.Pageable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -39,6 +43,9 @@ public class UserService {
     public void printUser() {
         user.toString();
     }
+
+    @Autowired
+    IUserInterface iUserRepository;
 
     @Autowired
     UserRepository userRepository;
@@ -91,12 +98,25 @@ public class UserService {
         return user;
     }
 
-   /* public UserDTO updateUser(UserCreateDTO userCreateDTO, Integer id) {
-
-
+    public void getAllUserPage(Pageable pageable) {
+        IUserInterface.getAllUserPage(pageable);
     }
 
+   /* public UserDTO updateUser(UserCreateDTO userCreateDTO, Integer id) {
     */
+
+    public void search(UserSearchFilter userSearchFilter){
+       /* if(userSearchFilter.getfirstName != null){
+            ///poziv ka repository
+        }
+        if(userSearchFilter.getfirstName != null && userSearchFilter.getDescription()!=null){
+            //poziv ka drugoj reposiotry methodi
+        }*/
+        UserSpecifications userSpecification = new UserSpecifications(userSearchFilter);
+        iUserRepository.findAll(userSpecification);
+    }
+
+
 
 
 
