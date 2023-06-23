@@ -1,9 +1,9 @@
 server:
-  port: 8090
+  port: 8080
 
 spring:
   application:
     name: Logate Akademija Application
-  profile:
+  profiles:
     active: dev
 
