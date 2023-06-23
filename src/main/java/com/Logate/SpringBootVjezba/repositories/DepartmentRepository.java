@@ -20,6 +20,7 @@ import java.util.Optional;
 public interface DepartmentRepository extends JpaRepository<Department, Integer> {
 //JPQL
     //SELECT * FROM DEPARTMENT
+    /*
     @Query(value="select department from Department department", nativeQuery = false)
     public List<Department> findAll();
 
@@ -60,13 +61,13 @@ public interface DepartmentRepository extends JpaRepository<Department, Integer>
     //njamo odna je najbolje da koristimo DTO
 
     /////QUERY PAGE PROBLEM
-   /* @Query(value="select department from Department department " +
+   @Query(value="select department from Department department " +
             "join fetch department.user " +
             "where department.name = :name", countQuery = "select count(department.id) from Department department where department.name = :name")
     Page<Department> findByNameWithPagingIssue(@Param("name") String name, Pageable pageable);
-*/
+
 //QUERy PAGE RJESENJE
-    @Query(value="select department.id from Department department where department.name = :name")
+   /// @Query(value="select department.id from Department department where department.name = :name")
     Page<Integer> findByNameWithPagingIssue(@Param("name") String name, Pageable pageable);
 
     @Query(value="select department from Department department " +
@@ -79,7 +80,7 @@ public interface DepartmentRepository extends JpaRepository<Department, Integer>
             "where department.id = :id")
     Department updateById (@Param("desc") String desc, @Param("id") Integer id);
 
-
+*/
 
 
 

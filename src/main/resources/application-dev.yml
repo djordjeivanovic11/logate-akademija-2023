@@ -1,10 +1,9 @@
 spring:
   jpa:
     show-sql: true
-    database-platform:
-      org:
-        hibernate:
-          dialect: MySQL5InnoDBDialect
+  cache:
+    jcache:
+      config: classpath:cache/ehcache.xml
 
   datasource:
     name: MySQL Database

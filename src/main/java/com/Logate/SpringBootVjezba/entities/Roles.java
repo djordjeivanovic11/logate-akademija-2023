@@ -15,6 +15,6 @@ import java.util.Set;
     private String roleName;
     @Column
     private String description;
-    @ManyToMany(mappedBy = "role", targetEntity = User.class)
+    @ManyToMany(mappedBy = "roles", targetEntity = User.class)
     private Set<User> users = new HashSet<>();
 }

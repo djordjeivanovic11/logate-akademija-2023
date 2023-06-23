@@ -4,6 +4,6 @@ server:
 spring:
   application:
     name: Logate Akademija Application
-  profile:
+  profiles:
     active: dev
 

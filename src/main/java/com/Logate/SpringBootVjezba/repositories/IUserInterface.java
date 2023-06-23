@@ -18,6 +18,8 @@ import java.util.List;
 @Repository
 public interface IUserInterface extends JpaRepository<User, Integer>, JpaSpecificationExecutor<User> {
 
+    /*
+
 
     //////JPA QUERIES/////////
     //SELECT * FROM USER
@@ -58,7 +60,7 @@ public interface IUserInterface extends JpaRepository<User, Integer>, JpaSpecifi
     //////////JPQL//////////////
     //MI pisemo upit ali na JPQL
 
-    @Query(value="select user from User user join user.department on department " +
+    /*@Query(value="select user from User user join user.department on department " +
             "where department.name = :name and user.username like :username")
     List<User> findByUsernameLikeAndDepartmentName(@Param("name") String name, @Param("username") String username);
 
@@ -101,5 +103,5 @@ List<User> getByDepartmentDescriptionAndName(@Param("description") String descri
     @Query(value="select first_name firstName, last_name lastName, age " +
             "from User user where user.name = :userName", nativeQuery = true)
     List<UserProjection> getUserByNameNative(@Param("name") String name);
-
+*/
 }

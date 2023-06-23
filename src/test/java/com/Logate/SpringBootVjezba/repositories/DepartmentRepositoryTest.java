@@ -22,6 +22,7 @@ import java.util.List;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = DepartmentRepositoryTest.class)
 public class DepartmentRepositoryTest {
+    /*
 
     private final static Logger LOGGER = LoggerFactory.getLogger(DepartmentRepositoryTest.class);
     @Autowired

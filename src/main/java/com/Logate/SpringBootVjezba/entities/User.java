@@ -18,6 +18,8 @@ import java.util.Set;
 @Table(name="users")
 public class User {
     @Column
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column
     private String name;
@@ -33,13 +35,13 @@ public class User {
     @JoinColumn(name="department_id")
     private Department department;
 
-    @ManyToOne
-
+    @ManyToMany
+    @JsonIgnore
     @JoinTable(
             name="user_roles",
             joinColumns = @JoinColumn(name="user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name="role_id", referencedColumnName = "id")
     )
-    private Set<User> role = new HashSet<>();
+    private Set<Roles> roles = new HashSet<>();
 
 }

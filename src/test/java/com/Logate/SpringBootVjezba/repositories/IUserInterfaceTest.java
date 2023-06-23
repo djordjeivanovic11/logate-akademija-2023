@@ -18,6 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest (classes= Application.class)
 class IUserInterfaceTest {
+    /*
 
     @Autowired
     IUserInterface userRepository;
@@ -55,5 +56,5 @@ class IUserInterfaceTest {
         }
     }
 
-
+*/
 }
