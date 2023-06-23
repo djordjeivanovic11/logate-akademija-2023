@@ -3,7 +3,6 @@ package com.Logate.SpringBootVjezba.controllers;
 import com.Logate.SpringBootVjezba.DTO.UserCreateDTO;
 import com.Logate.SpringBootVjezba.DTO.UserDTO;
 import com.Logate.SpringBootVjezba.Filters.UserFilter;
-import com.Logate.SpringBootVjezba.Filters.UserSearchFilter;
 import com.Logate.SpringBootVjezba.User;
 import com.Logate.SpringBootVjezba.repositories.UserRepository;
 import com.Logate.SpringBootVjezba.services.UserService;
@@ -17,7 +16,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.print.Pageable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -77,6 +75,8 @@ public class UserController {
         LOGGER.info("User kojeg smo napravili je {}", userCreateDTO);
         UserDTO user = userService.createUser(userCreateDTO);
         return new ResponseEntity<>(user, HttpStatus.OK);
+
+
     }
 
     /*@PutMapping(value="{id}")
@@ -102,14 +102,5 @@ public class UserController {
         return new ResponseEntity<>(httpHeader, HttpStatus.NO_CONTENT);
     }
 
-   /* @GetMapping(value="paging")
-    public ResponseEntity<Void> requestWithPaging(Pageable pageable){
-        userService.getAllUserPage(pageable);
-        return ResponseEntity(HttpStatus.OK);
-    }
-    @GetMapping(value="search-filter")
-    public ResponseEntity<Void> search(UserSearchFilter userSearchFilter) {
-        userService,search(userSearchFilter);
-    }*/
 
 }

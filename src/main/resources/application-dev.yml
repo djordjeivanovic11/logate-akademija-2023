@@ -1,17 +1,3 @@
-spring:
-  jpa:
-    show-sql: true
-  cache:
-    jcache:
-      config: classpath:cache/ehcache.xml
-
-  datasource:
-    name: MySQL Database
-    url: jdbc:mysql://localhost:3306/logate_akademija_2023?useSSL=false&serverTimezone=CET&allowPublicKeyRetrieval=true&useUnicode=true
-    username: root
-    password: Password1.2.3.UWC
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
 
 twitter-api:
   url: 192.168.42.45/api/twitter
@@ -19,9 +5,9 @@ twitter-api:
   port: 889
   token: password222
 
+spring:
+  jpa:
+    6
 
 external-post-api:
   url: "https://jsonplaceholder.typicode.com/posts"
-
-external-fake-store-api:
-  url: "https://fakestoreapi.com/products"
