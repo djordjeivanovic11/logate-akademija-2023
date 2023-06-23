@@ -22,6 +22,7 @@ public class ExternalPostController {
     public ResponseEntity<PostDTO> getPostById(@PathVariable Integer id){
         PostDTO post = externalPostService.getPostById(id);
         return new ResponseEntity<>(post, HttpStatus.OK);
+
     }
 
 
