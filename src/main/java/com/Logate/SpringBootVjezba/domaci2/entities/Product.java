@@ -41,7 +41,7 @@ public class Product {
     @OneToMany(mappedBy = "product", targetEntity = OrderItem.class)
     private OrderItem orderItem;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
     @JoinColumn(name="category_id")
     private Category category;
