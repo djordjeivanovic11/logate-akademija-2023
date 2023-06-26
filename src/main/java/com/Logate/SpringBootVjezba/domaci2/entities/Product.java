@@ -1,5 +1,6 @@
 package com.Logate.SpringBootVjezba.domaci2.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -8,6 +9,7 @@ import lombok.Setter;
 
 import javax.print.attribute.standard.DateTimeAtCreation;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -38,11 +40,11 @@ public class Product {
     @Column(name="is_active")
     private Boolean isActive;
 
-    @OneToMany(mappedBy = "product", targetEntity = OrderItem.class)
-    private OrderItem orderItem;
+    @OneToMany(mappedBy = "product")
+    private List<OrderItem> orderItem;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JsonIgnore
+    @JsonBackReference
     @JoinColumn(name="category_id")
     private Category category;
 

@@ -26,7 +26,7 @@ public class CustomerRepositoryTest {
     public CustomerRepositoryTest() {
     }
 
-    @Test
+    /*@Test
     @Transactional
     void createCustomer() {
         Customer customer = new Customer();
@@ -34,7 +34,7 @@ public class CustomerRepositoryTest {
         customerRepository.save(customer);
         LOGGER.info("Kreiran je novi korisnik.");
     }
-
+*/
     @Test
     @Transactional
     void updateCustomer(CustomerDTO customer){

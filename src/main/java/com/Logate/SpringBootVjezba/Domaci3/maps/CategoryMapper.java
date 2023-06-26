@@ -12,11 +12,11 @@ import org.mapstruct.ReportingPolicy;
         unmappedSourcePolicy = ReportingPolicy.IGNORE
 )
 public interface CategoryMapper {
-    @Mapping(source = "title", target = "ime")
+    @Mapping(source = "name", target = "ime")
     @Mapping(source = "description", target = "opis")
     CategoryDTO convertCategoryToCategoryDTO(Category category);
 
-    @Mapping(source = "ime", target = "title")
+    @Mapping(source = "ime", target = "name")
     @Mapping(source = "opis", target = "description")
     Category convertCategoryDTOToCategory(CategoryDTO categoryDTO);
 
